@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-20T07:22:44.069Z",
+  "source": "live",
+  "radarState": "streaming",
+  "cameraState": "streaming",
+  "radarCycles": 8425,
+  "cameraSequence": 3622,
+  "fieldScope": "radar_only",
+  "fieldPeak": 0,
+  "fieldBounds": {
+    "xMin": -150,
+    "xMax": 150,
+    "yMin": -20,
+    "yMax": 202
+  },
+  "views": [
+    "camera",
+    "radar",
+    "risk"
+  ],
+  "websocketCount": 1,
+  "initialImageRequests": 27,
+  "compactCardBounds": [
+    {
+      "x": 29.488889694213867,
+      "y": 148.977783203125,
+      "right": 679.4444561004639,
+      "bottom": 679.1111450195312,
+      "width": 649.95556640625,
+      "height": 530.1333618164062
+    },
+    {
+      "x": 686.5555419921875,
+      "y": 148.977783203125,
+      "right": 1336.51123046875,
+      "bottom": 679.1111450195312,
+      "width": 649.9556884765625,
+      "height": 530.1333618164062
+    }
+  ],
+  "minimap": {
+    "x": 44.42222213745117,
+    "y": 186.6666717529297,
+    "width": 217.60002517700195,
+    "height": 163.8000030517578
+  },
+  "cameraCover": {
+    "x": -154.57142857142856,
+    "y": 0,
+    "w": 1207.142857142857,
+    "h": 676,
+    "canvasWidth": 898,
+    "canvasHeight": 676
+  },
+  "cameraComplete": {
+    "x": 0,
+    "y": 86.56,
+    "w": 898,
+    "h": 502.88,
+    "canvasWidth": 898,
+    "canvasHeight": 676
+  },
+  "cameraBoxCount": 10,
+  "cameraLabelCount": 0,
+  "selectionPoint": {
+    "x": 255.89309453964236,
+    "y": 815.8237317800521,
+    "id": "vision:V01581"
+  },
+  "riskTransform": {
+    "scaleX": 7.783783912658691,
+    "scaleY": 7.783783912658691
+  },
+  "fieldCenter": "0.000",
+  "metrics": [
+    "11",
+    "0"
+  ],
+  "errors": []
+}

@@ -1,0 +1,19 @@
+{
+  "radar": {
+    "host": "192.168.10.123",
+    "port": 50000,
+    "localAddress": "192.168.10.50",
+    "adapterAlias": "以太网",
+    "adapterGuid": "{28595A8B-1CFB-4BA6-B654-61B23B34E537}"
+  },
+  "camera": {
+    "enabled": true,
+    "rtspUrl": "rtsp://192.168.1.11/",
+    "localAddress": "192.168.1.50",
+    "adapterAlias": "以太网 2",
+    "adapterGuid": "{ACFDAC16-7E58-4AC0-A1F2-541964F9E1FD}",
+    "pythonPath": "C:/Users/kunkun/AppData/Local/Programs/Python/Python39/python.exe",
+    "modelPath": "models/yolov8n.pt",
+    "fps": 15
+  }
+}

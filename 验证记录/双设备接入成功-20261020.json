@@ -1,0 +1,95 @@
+[
+  {
+    "checkedAt": "2026-10-20T14:36:17.5643206+08:00",
+    "visionTargetCount": 2,
+    "radarTargetCount": 1,
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "streaming",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 35210,
+        "cycles": 1597,
+        "completeCycles": 1597,
+        "totalTargets": 664,
+        "lastPacketAt": 1792478177445,
+        "lastCycleAt": 1792478177445,
+        "ageMs": 77,
+        "error": ""
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 2 个检测目标",
+        "ageMs": 269,
+        "sequence": 3257,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  },
+  {
+    "checkedAt": "2026-10-20T14:36:19.6444227+08:00",
+    "visionTargetCount": 3,
+    "radarTargetCount": 1,
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "streaming",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 36022,
+        "cycles": 1623,
+        "completeCycles": 1623,
+        "totalTargets": 690,
+        "lastPacketAt": 1792478179593,
+        "lastCycleAt": 1792478179531,
+        "ageMs": 102,
+        "error": ""
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 3 个检测目标",
+        "ageMs": 275,
+        "sequence": 3272,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  },
+  {
+    "checkedAt": "2026-10-20T14:36:21.6635168+08:00",
+    "visionTargetCount": 1,
+    "radarTargetCount": 0,
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "streaming",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 36470,
+        "cycles": 1649,
+        "completeCycles": 1649,
+        "totalTargets": 692,
+        "lastPacketAt": 1792478181644,
+        "lastCycleAt": 1792478181644,
+        "ageMs": 15,
+        "error": ""
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 1 个检测目标",
+        "ageMs": 226,
+        "sequence": 3286,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  }
+]

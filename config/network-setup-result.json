@@ -1,0 +1,17 @@
+﻿{
+    "time":  "2026-10-20T14:27:34.3203121+08:00",
+    "error":  null,
+    "adapters":  [
+                     {
+                         "prefixLength":  24,
+                         "address":  "192.168.10.50",
+                         "interfaceIndex":  5
+                     },
+                     {
+                         "prefixLength":  24,
+                         "address":  "192.168.1.50",
+                         "interfaceIndex":  49
+                     }
+                 ],
+    "success":  true
+}

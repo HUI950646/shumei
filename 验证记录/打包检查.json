@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-20",
+  "contents": "项目源码、构建成品、模型、实测数据、配置示例和接线说明",
+  "backendTests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "frontendPreviousValidation": {
+    "passed": 27,
+    "skipped": 1
+  },
+  "modelInference": "bundled yolov8n.pt inference passed on original computer",
+  "limitations": [
+    "未在新电脑验证；运行环境及网卡配置由接手者完成。",
+    "实时雷达与摄像头联合标定、可靠匹配及实时融合风险场待现场完成。"
+  ],
+  "excluded": [
+    "Node/Python运行环境",
+    "node_modules",
+    "自动安装工具",
+    "自动配网工具"
+  ],
+  "sourceFileCount": 1115
+}

@@ -1,0 +1,26 @@
+{
+  "streams": {
+    "single": {
+      "opened": true,
+      "threads": 1.0,
+      "fps": 25.0,
+      "firstFrameMs": 2344,
+      "frames": 368,
+      "dtsDelay": 0.0
+    },
+    "automatic": {
+      "opened": true,
+      "threads": 16.0,
+      "fps": 25.0,
+      "firstFrameMs": 3631,
+      "frames": 340,
+      "dtsDelay": 0.0
+    }
+  },
+  "identicalFrames": 339,
+  "automaticMinusSingleMs": {
+    "p50": 603,
+    "p95": 673,
+    "min": 518
+  }
+}

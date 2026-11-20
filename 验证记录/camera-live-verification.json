@@ -1,0 +1,239 @@
+{
+  "hostTime": 1792474356.52369,
+  "samples": [
+    {
+      "time": 1792474353328,
+      "sequence": 871,
+      "ageMs": 125,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474353486,
+      "sequence": 872,
+      "ageMs": 142,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474353654,
+      "sequence": 873,
+      "ageMs": 217,
+      "detections": 6,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474353818,
+      "sequence": 875,
+      "ageMs": 154,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474353979,
+      "sequence": 876,
+      "ageMs": 224,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354135,
+      "sequence": 878,
+      "ageMs": 140,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354290,
+      "sequence": 879,
+      "ageMs": 156,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354461,
+      "sequence": 880,
+      "ageMs": 237,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354617,
+      "sequence": 882,
+      "ageMs": 154,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354782,
+      "sequence": 884,
+      "ageMs": 134,
+      "detections": 6,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474354937,
+      "sequence": 885,
+      "ageMs": 201,
+      "detections": 6,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355092,
+      "sequence": 887,
+      "ageMs": 140,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355261,
+      "sequence": 888,
+      "ageMs": 187,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355418,
+      "sequence": 890,
+      "ageMs": 108,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355574,
+      "sequence": 891,
+      "ageMs": 172,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355730,
+      "sequence": 892,
+      "ageMs": 187,
+      "detections": 5,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474355900,
+      "sequence": 894,
+      "ageMs": 125,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474356056,
+      "sequence": 895,
+      "ageMs": 190,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474356214,
+      "sequence": 897,
+      "ageMs": 156,
+      "detections": 4,
+      "radarState": "disconnected"
+    },
+    {
+      "time": 1792474356372,
+      "sequence": 898,
+      "ageMs": 174,
+      "detections": 4,
+      "radarState": "disconnected"
+    }
+  ],
+  "sampleFrame": {
+    "type": "live_frame",
+    "timestamp": 1792474353328,
+    "radar": [],
+    "vision": {
+      "sequence": 871,
+      "captured_utc": "2026-10-20T05:32:33.203Z",
+      "width": 800,
+      "height": 448,
+      "detections": [
+        {
+          "x": 507.7197265625,
+          "y": 200.65086364746094,
+          "width": 24.1566162109375,
+          "height": 15.954513549804688,
+          "score": 0.805546760559082,
+          "label": "car",
+          "track_id": "V00182"
+        },
+        {
+          "x": 362.6420593261719,
+          "y": 225.06820678710938,
+          "width": 33.807525634765625,
+          "height": 27.794570922851562,
+          "score": 0.6671394109725952,
+          "label": "car",
+          "track_id": "V00135"
+        },
+        {
+          "x": 384.6417541503906,
+          "y": 203.36769104003906,
+          "width": 24.0948486328125,
+          "height": 20.53741455078125,
+          "score": 0.6238012909889221,
+          "label": "car",
+          "track_id": "V00159"
+        },
+        {
+          "x": 473.9485168457031,
+          "y": 177.8280792236328,
+          "width": 15.90667724609375,
+          "height": 16.588943481445312,
+          "score": 0.4381474554538727,
+          "label": "car",
+          "track_id": "V00173"
+        }
+      ],
+      "imageUrl": "/api/live/camera/871.jpg"
+    },
+    "snapshot": null,
+    "live": {
+      "startedAt": 1792474248552,
+      "radar": {
+        "state": "disconnected",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 0,
+        "cycles": 0,
+        "completeCycles": 0,
+        "totalTargets": 0,
+        "lastPacketAt": null,
+        "lastCycleAt": null,
+        "ageMs": null,
+        "error": "EADDRNOTAVAIL"
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 4 个检测目标",
+        "ageMs": 125,
+        "sequence": 871,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    },
+    "context": {
+      "source": "live",
+      "dispatchHz": 10,
+      "northCalibrated": false,
+      "radarRange": 200,
+      "bounds": {
+        "xMin": -50,
+        "xMax": 50,
+        "yMin": -20,
+        "yMax": 100
+      }
+    }
+  },
+  "cameraSource": "rtsp://192.168.1.11/",
+  "layout": "camera on USB Ethernet; radar on built-in NIC (not present)",
+  "backendTests": 19,
+  "frontendPassed": 27,
+  "frontendSkipped": 1
+}

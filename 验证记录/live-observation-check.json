@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-10-20T13:12:01.950902+08:00",
+  "frames": 30,
+  "cyclesStart": 1654,
+  "cyclesEnd": 1697,
+  "latestStatus": {
+    "startedAt": 1792472986082,
+    "radar": {
+      "state": "streaming",
+      "endpoint": "192.168.10.123:50000",
+      "bytes": 32424,
+      "cycles": 1697,
+      "completeCycles": 1697,
+      "totalTargets": 349,
+      "lastPacketAt": 1792473121778,
+      "lastCycleAt": 1792473121778,
+      "ageMs": 64,
+      "error": ""
+    },
+    "camera": {
+      "state": "not-connected",
+      "message": "等待外接网络摄像头连接与 RTSP 地址"
+    },
+    "fusion": {
+      "state": "unavailable",
+      "message": "实时摄像头和本次现场标定未就绪，尚无融合风险场"
+    }
+  },
+  "targetFrames": 20,
+  "distinctTargetIds": [
+    181,
+    182,
+    183
+  ],
+  "sample": {
+    "type": "live_frame",
+    "timestamp": 1792473118355,
+    "radar": [
+      {
+        "track_id": 181,
+        "x_lateral": 0.4000000000000057,
+        "y_longitudinal": 18.800000000000068,
+        "vx_lateral": -0.25,
+        "vy_longitudinal": -9.75,
+        "range": 18.80425483766912,
+        "angle": 1.2188752351312928,
+        "rcs": -55,
+        "target_seq": 319,
+        "host_received_utc": "2026-10-20T05:11:58.339Z"
+      }
+    ],
+    "vision": null,
+    "snapshot": null,
+    "live": {
+      "startedAt": 1792472986082,
+      "radar": {
+        "state": "streaming",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 31318,
+        "cycles": 1654,
+        "completeCycles": 1654,
+        "totalTargets": 319,
+        "lastPacketAt": 1792473118339,
+        "lastCycleAt": 1792473118339,
+        "ageMs": 16,
+        "error": ""
+      },
+      "camera": {
+        "state": "not-connected",
+        "message": "等待外接网络摄像头连接与 RTSP 地址"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "实时摄像头和本次现场标定未就绪，尚无融合风险场"
+      }
+    },
+    "context": {
+      "source": "live",
+      "dispatchHz": 10,
+      "northCalibrated": false,
+      "radarRange": 100,
+      "bounds": {
+        "xMin": -50,
+        "xMax": 50,
+        "yMin": -20,
+        "yMax": 100
+      }
+    }
+  },
+  "frontendTestsPassed": 26,
+  "backendTestsPassed": 18,
+  "cameraConnected": false,
+  "fusionFieldAvailable": false
+}

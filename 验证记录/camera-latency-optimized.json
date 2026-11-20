@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-20T07:35:18.322Z",
+  "label": "optimized",
+  "scope": "Local post-decode timestamp to browser paint; excludes camera encoder/network/decoder buffering",
+  "firstPaintAgeMs": {
+    "count": 52,
+    "mean": 370,
+    "p50": 370,
+    "p95": 452,
+    "max": 465
+  },
+  "displayedAgeMs": {
+    "count": 450,
+    "mean": 499,
+    "p50": 498,
+    "p95": 654,
+    "max": 742
+  },
+  "displayedFps": 3.47,
+  "slowImageMs": 0,
+  "maxActiveImages": 0,
+  "frameGapMs": {
+    "count": 51,
+    "mean": 288,
+    "p50": 299,
+    "p95": 367,
+    "max": 379
+  },
+  "camera": {
+    "state": "streaming",
+    "message": "800 × 448 · YOLOv8 · 本机推理 · 2 个检测目标",
+    "ageMs": 554,
+    "sequence": 98,
+    "detector": "YOLOv8 · 本机推理",
+    "timing": {
+      "inferenceMs": 265.7,
+      "encodeMs": 4.3,
+      "processingMs": 308.2,
+      "decodeThreads": 1,
+      "inferenceThreads": 2
+    }
+  }
+}

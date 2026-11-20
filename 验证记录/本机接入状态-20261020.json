@@ -1,0 +1,89 @@
+[
+  {
+    "checkedAt": "2026-10-20T14:32:04.5048179+08:00",
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "disconnected",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 0,
+        "cycles": 0,
+        "completeCycles": 0,
+        "totalTargets": 0,
+        "lastPacketAt": null,
+        "lastCycleAt": null,
+        "ageMs": null,
+        "error": "3 秒内未收到雷达数据"
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 9 个检测目标",
+        "ageMs": 202,
+        "sequence": 1626,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  },
+  {
+    "checkedAt": "2026-10-20T14:32:07.5603558+08:00",
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "connecting",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 0,
+        "cycles": 0,
+        "completeCycles": 0,
+        "totalTargets": 0,
+        "lastPacketAt": null,
+        "lastCycleAt": null,
+        "ageMs": null,
+        "error": "3 秒内未收到雷达数据"
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 5 个检测目标",
+        "ageMs": 212,
+        "sequence": 1646,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  },
+  {
+    "checkedAt": "2026-10-20T14:32:10.5728728+08:00",
+    "status": {
+      "startedAt": 1792477458303,
+      "radar": {
+        "state": "connecting",
+        "endpoint": "192.168.10.123:50000",
+        "bytes": 0,
+        "cycles": 0,
+        "completeCycles": 0,
+        "totalTargets": 0,
+        "lastPacketAt": null,
+        "lastCycleAt": null,
+        "ageMs": null,
+        "error": "3 秒内未收到雷达数据"
+      },
+      "camera": {
+        "state": "streaming",
+        "message": "800 × 448 · YOLOv8 · 本机推理 · 6 个检测目标",
+        "ageMs": 269,
+        "sequence": 1666,
+        "detector": "YOLOv8 · 本机推理"
+      },
+      "fusion": {
+        "state": "unavailable",
+        "message": "等待雷达连接与本次现场联合标定，风险场暂不可用"
+      }
+    }
+  }
+]

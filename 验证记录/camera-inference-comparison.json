@@ -1,0 +1,33 @@
+{
+  "initialThreadsAfterModelSetup": 8,
+  "results": [
+    {
+      "threads": 8,
+      "p50Ms": 274,
+      "maxMs": 351,
+      "detections": 5,
+      "actualThreads": 8
+    },
+    {
+      "threads": 4,
+      "p50Ms": 238,
+      "maxMs": 370,
+      "detections": 5,
+      "actualThreads": 4
+    },
+    {
+      "threads": 2,
+      "p50Ms": 215,
+      "maxMs": 260,
+      "detections": 5,
+      "actualThreads": 2
+    },
+    {
+      "threads": 1,
+      "p50Ms": 289,
+      "maxMs": 313,
+      "detections": 5,
+      "actualThreads": 1
+    }
+  ]
+}

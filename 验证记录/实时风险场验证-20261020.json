@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-20T06:53:51.827Z",
+  "source": "live",
+  "live": {
+    "startedAt": 1792478928467,
+    "radar": {
+      "state": "streaming",
+      "endpoint": "192.168.10.123:50000",
+      "bytes": 126434,
+      "cycles": 3785,
+      "completeCycles": 3785,
+      "totalTargets": 4640,
+      "ageMs": 30,
+      "error": ""
+    },
+    "camera": {
+      "state": "streaming",
+      "message": "800 × 448 · YOLOv8 · 本机推理 · 6 个检测目标"
+    },
+    "fusion": {
+      "state": "radar_only",
+      "message": "实时雷达相对风险估计 · 基于距离与运动量 · 尚未联合标定"
+    }
+  },
+  "field": {
+    "width": 51,
+    "height": 101,
+    "scope": "radar_only",
+    "model": "live-radar-distance-ttc-v1",
+    "peak": 0.5879999995231628,
+    "nonzero": 332,
+    "timestamp": 1792479231274
+  },
+  "radarTargets": [
+    {
+      "id": "radar:185",
+      "radar": {
+        "range": 38.78659562271484,
+        "azimuth": 354.3775993729103,
+        "radialVelocity": -7.937020381848415,
+        "rcs": -44,
+        "sequence": 4638
+      },
+      "risk": {
+        "value": 0.5150630012154607,
+        "level": "mid"
+      }
+    },
+    {
+      "id": "radar:184",
+      "radar": {
+        "range": 44.944410108488526,
+        "azimuth": 355.4057466687336,
+        "radialVelocity": -1.724352368023691,
+        "rcs": -44,
+        "sequence": 4639
+      },
+      "risk": {
+        "value": 0.5578040051460279,
+        "level": "mid"
+      }
+    },
+    {
+      "id": "radar:188",
+      "radar": {
+        "range": 57.313174750662746,
+        "azimuth": 356.39872188277656,
+        "radialVelocity": -8.186599364652622,
+        "rcs": -56,
+        "sequence": 4640
+      },
+      "risk": {
+        "value": 0.44864801168441754,
+        "level": "mid"
+      }
+    }
+  ],
+  "unassociatedVisualRisk": false,
+  "errors": []
+}

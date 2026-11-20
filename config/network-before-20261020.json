@@ -1,0 +1,51 @@
+{
+  "CapturedAt": "2026-10-20T14:26:35.3699288+08:00",
+  "IPv4": [
+    {
+      "InterfaceIndex": 49,
+      "IPAddress": "169.254.139.69",
+      "PrefixLength": 16,
+      "PrefixOrigin": 2
+    },
+    {
+      "InterfaceIndex": 5,
+      "IPAddress": "169.254.133.137",
+      "PrefixLength": 16,
+      "PrefixOrigin": 2
+    }
+  ],
+  "Interfaces": [
+    {
+      "InterfaceIndex": 49,
+      "Dhcp": 1
+    },
+    {
+      "InterfaceIndex": 5,
+      "Dhcp": 1
+    }
+  ],
+  "Dns": [
+    {
+      "InterfaceIndex": 5,
+      "ServerAddresses": []
+    },
+    {
+      "InterfaceIndex": 49,
+      "ServerAddresses": []
+    }
+  ],
+  "Adapters": [
+    {
+      "Name": "以太网 2",
+      "InterfaceDescription": "ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter",
+      "InterfaceGuid": "{ACFDAC16-7E58-4AC0-A1F2-541964F9E1FD}",
+      "ifIndex": 49
+    },
+    {
+      "Name": "以太网",
+      "InterfaceDescription": "Realtek PCIe GbE Family Controller",
+      "InterfaceGuid": "{28595A8B-1CFB-4BA6-B654-61B23B34E537}",
+      "ifIndex": 5
+    }
+  ]
+}
