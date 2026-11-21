@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AuthBackdrop from './AuthBackdrop.vue';
+import OpeningCg from './OpeningCg.vue';
 
 /**
- * 登录 / 注册（单栏）。
- * 与入口页共用 AuthBackdrop 的同一张道路实景图背景。
- * 纯前端演示：图形验证码在本地生成并校验，没有后端接口。
+ * 登录与注册演示页。开场视频定格后显示表单，本地生成并校验图形验证码。
  */
 
 type Mode = 'login' | 'register';
 
 const route = useRoute();
 const router = useRouter();
+const showOpening = ref(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const closingFrame = `${import.meta.env.BASE_URL}login-opening-still.jpg`;
 // 支持 #/login?mode=register 直接深链到注册页
 const mode = ref<Mode>(route.query.mode === 'register' ? 'register' : 'login');
 const account = ref('');
@@ -24,20 +25,18 @@ const submitting = ref(false);
 const captchaCanvas = ref<HTMLCanvasElement | null>(null);
 const captchaCode = ref('');
 const captchaSpinning = ref(false);
+let captchaTimer: number | undefined;
+let submitTimer: number | undefined;
 
 const isRegister = computed(() => mode.value === 'register');
 const submitLabel = computed(() => (submitting.value ? '处理中…' : isRegister.value ? '注 册' : '登 录'));
 
+function disableOpeningControls(element: Element) {
+  if (element instanceof HTMLElement) element.inert = true;
+}
+
 // 同一路由内切换 ?mode=register 时组件不会重建，需要跟着 query 走
-watch(
-  () => route.query.mode,
-  (value) => {
-    const next: Mode = value === 'register' ? 'register' : 'login';
-    if (next === mode.value) return;
-    mode.value = next;
-    refreshCaptcha();
-  },
-);
+watch(() => route.query.mode, (value) => switchMode(value === 'register' ? 'register' : 'login'));
 
 /* ---------------- 图形验证码 ---------------- */
 
@@ -116,11 +115,15 @@ function refreshCaptcha(rotate = false) {
   captchaCode.value = makeCode();
   captchaInput.value = '';
   errorText.value = '';
+  window.clearTimeout(captchaTimer);
+  captchaSpinning.value = false;
   if (rotate) {
-    captchaSpinning.value = false;
-    nextTick(() => {
+    void nextTick(() => {
+      if (!captchaCanvas.value) return;
       captchaSpinning.value = true;
-      window.setTimeout(() => (captchaSpinning.value = false), 520);
+      captchaTimer = window.setTimeout(() => {
+        captchaSpinning.value = false;
+      }, 520);
     });
   }
   drawCaptcha();
@@ -135,6 +138,8 @@ watch(captchaCanvas, (el) => {
 
 function switchMode(next: Mode) {
   if (mode.value === next) return;
+  window.clearTimeout(submitTimer);
+  submitting.value = false;
   mode.value = next;
   account.value = '';
   password.value = '';
@@ -143,7 +148,7 @@ function switchMode(next: Mode) {
   refreshCaptcha();
 }
 
-async function submit() {
+function submit() {
   if (submitting.value) return;
   errorText.value = '';
   hintText.value = '';
@@ -165,23 +170,37 @@ async function submit() {
     return;
   }
   submitting.value = true;
-  await new Promise((resolve) => window.setTimeout(resolve, 680));
-  submitting.value = false;
-  hintText.value = isRegister.value
-    ? '注册信息已通过校验（演示界面，未连接后端）'
-    : '登录成功，正在进入驾驶舱…';
-  window.setTimeout(() => router.push('/cockpit'), 780);
-  refreshCaptcha();
+  submitTimer = window.setTimeout(() => {
+    hintText.value = isRegister.value
+      ? '注册信息已通过校验（演示界面，未连接后端）'
+      : '登录成功，正在进入驾驶舱…';
+    refreshCaptcha();
+    submitTimer = window.setTimeout(() => {
+      submitting.value = false;
+      void router.push('/cockpit');
+    }, 780);
+  }, 680);
 }
 
 onMounted(() => {
   refreshCaptcha();
 });
-onBeforeUnmount(() => {});
+onBeforeUnmount(() => {
+  window.clearTimeout(captchaTimer);
+  window.clearTimeout(submitTimer);
+});
 </script>
 
 <template>
-  <AuthBackdrop scrim="center">
+  <Transition name="opening-cg" @before-leave="disableOpeningControls">
+    <OpeningCg v-if="showOpening" @complete="showOpening = false" />
+  </Transition>
+  <AuthBackdrop
+    :class="{ 'login-waiting': showOpening }"
+    :opening="showOpening"
+    :still-frame="closingFrame"
+    scrim="none"
+  >
     <header class="login-head">
       <button type="button" class="login-back" @click="router.push('/welcome')">
         <span aria-hidden="true">←</span> 返回首页
@@ -223,7 +242,7 @@ onBeforeUnmount(() => {});
 
         <p class="login-lead">{{ isRegister ? '创建账号后即可进入驾驶舱' : '登录以进入实时感知驾驶舱' }}</p>
 
-        <form :key="mode" class="login-form" novalidate @submit.prevent="submit">
+        <form :key="mode" class="login-form" :aria-busy="submitting" novalidate @submit.prevent="submit">
           <label class="field">
             <input
               v-model="account"
@@ -299,6 +318,38 @@ onBeforeUnmount(() => {});
 </template>
 
 <style scoped>
+.opening-cg-leave-active {
+  pointer-events: none;
+  transition: opacity 620ms cubic-bezier(0.42, 0, 0.24, 1);
+}
+
+.opening-cg-leave-active :deep(.opening-cg__skip) {
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.opening-cg-leave-to {
+  opacity: 0;
+}
+
+.login-head,
+.login-theme,
+.login-card,
+.login-foot {
+  transition:
+    opacity 480ms ease,
+    transform 480ms cubic-bezier(0.21, 0.74, 0.25, 1);
+}
+
+.login-theme { transition-delay: 70ms; }
+.login-card { transition-delay: 170ms; }
+
+.login-waiting :is(.login-head, .login-theme, .login-card, .login-foot) {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: none;
+}
+
 .login-head {
   display: flex;
   align-items: center;
@@ -701,6 +752,14 @@ onBeforeUnmount(() => {});
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .opening-cg-leave-active,
+  .login-head,
+  .login-theme,
+  .login-card,
+  .login-foot {
+    transition: none;
+  }
+
   .login-form,
   .captcha--spin .captcha__canvas,
   .submit-btn__shine {

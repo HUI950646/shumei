@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
-/**
- * 登录入口共用的背景层：同一张道路实景图 + 暮色调色 + 网格 + 缓慢浮动粒子。
- * 入口页与登录页都引用它，保证"同一张背景"。
- */
+/** 入口与登录共用的背景结构。登录可以使用开场视频的定格画面。 */
 
-withDefaults(defineProps<{ scrim?: 'center' | 'left' | 'none' }>(), { scrim: 'center' });
+withDefaults(defineProps<{ scrim?: 'center' | 'left' | 'none'; opening?: boolean; stillFrame?: string }>(), {
+  scrim: 'center',
+  opening: false,
+});
 
 const particleCanvas = ref<HTMLCanvasElement | null>(null);
 
@@ -75,12 +75,17 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="backdrop">
-    <div class="backdrop__photo" aria-hidden="true" />
-    <div class="backdrop__grade" aria-hidden="true" />
+    <div
+      class="backdrop__photo"
+      :class="{ 'backdrop__photo--still': stillFrame }"
+      :style="stillFrame ? { backgroundImage: `url(${stillFrame})` } : undefined"
+      aria-hidden="true"
+    />
+    <div v-if="!stillFrame" class="backdrop__grade" aria-hidden="true" />
     <div class="backdrop__grid" aria-hidden="true" />
     <div v-if="scrim !== 'none'" class="backdrop__scrim" :class="`backdrop__scrim--${scrim}`" aria-hidden="true" />
     <canvas ref="particleCanvas" class="backdrop__particles" aria-hidden="true" />
-    <div class="backdrop__content"><slot /></div>
+    <div class="backdrop__content" :inert="opening"><slot /></div>
   </div>
 </template>
 
@@ -93,8 +98,7 @@ onBeforeUnmount(() => {
   font-family: var(--font);
 }
 
-/* 16:9 实景道路图（Pexels #16441659，Pexels License 可免费商用）
-   替换背景只需覆盖 public/auth-hero.jpg */
+/* 欢迎页默认背景，基于原图（Pexels #16441659）疏减车流。 */
 .backdrop__photo {
   position: absolute;
   inset: 0;
@@ -103,6 +107,13 @@ onBeforeUnmount(() => {
   background-position: center 46%;
   filter: saturate(0.9) contrast(1.03) brightness(0.74);
   transform: scale(1.02);
+}
+
+.backdrop__photo--still {
+  position: fixed;
+  background-position: center;
+  filter: none;
+  transform: none;
 }
 
 /* 压暗与色调：顶部偏冷，右下留一点暖意，保证文字可读 */
